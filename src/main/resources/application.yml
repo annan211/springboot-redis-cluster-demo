@@ -1,0 +1,25 @@
+server:
+  port: 8099
+
+spring:
+  redis:
+    cluster:
+      nodes:
+        - localhost:7001
+        - localhost:7002
+        - localhost:7003
+        - localhost:7004
+        - localhost:7005
+        - localhost:7006
+      maxRedirects: 3
+  datasource:
+    username: postgresadmin
+    password: admin123
+    url: jdbc:postgresql://localhost:54322/postgresdb
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
